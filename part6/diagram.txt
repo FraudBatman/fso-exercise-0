@@ -1,0 +1,21 @@
+title New note via SPA
+
+note over browser
+browser converts form to JSON 
+format as file new_note_spa.json
+end note
+
+browser->server: HTTP POST new_note_spa.json
+
+note over server
+server appends info from new_note_spa.json
+into the JSON file that holds note data
+end note
+
+server-->browser: 201 Created
+
+note over browser:
+After recieving code 201, browser
+begins to rerender the page, appending
+the newly made note
+end note
